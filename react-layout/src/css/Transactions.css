@@ -1,0 +1,29 @@
+.home-bb {
+    position:relative;
+    top:200px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the section */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+}
+
+#dark {
+    text-align: center; /* Centered heading */
+}
+
+table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Collapse borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+    padding: 12px; /* Padding for cells */
+    border: 1px solid #ddd; /* Cell borders */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for header */
+}

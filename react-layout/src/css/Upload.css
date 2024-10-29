@@ -1,0 +1,46 @@
+#upload-bottom {
+    position:relative;
+    top:200px;
+    max-width: 600px; /* Adjust width as needed */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+}
+
+#upload-bottom h2 {
+    text-align: center;
+}
+
+#upload-bottom div {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+#upload-bottom label {
+    display: block; /* Makes the label take a full line */
+    margin-bottom: 5px; /* Space below the label */
+}
+
+#upload-bottom select,
+#upload-bottom input,
+#upload-bottom textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#upload-button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for button */
+    background-color: #28a745; /* Bootstrap success color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#upload-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}

@@ -1,0 +1,57 @@
+:root {
+    --header-color: #B2ABF2;
+    --body-color: #FFEDE1;
+    --black-color: black;
+    --white-color: white;
+    --home-bb-color: #B2ABF2;
+    --home-color: #EBEBD3;
+    --content-color: #3BF4FB;
+    --bis-color:bisque;
+    --yellow-color:#CAF500;
+}
+/* Ensure spending section takes full width of the screen */
+#spend {
+ display:flex;
+ position:absolute;
+ top:300px;
+ background-color: var(--home-bb-color);
+ margin:0px;
+ width:98%;
+ 
+}
+
+/* Adjust spending section container */
+#spending-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center items evenly */
+    gap: 1%; /* Space between items */
+    width: 100%; /* Full width */
+    max-width: 100%; /* Ensure no overflow beyond viewport width */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+ 
+/* Individual spending item styles */
+#spend section {
+    flex: 1 1 calc(50% - 10px); /* Allow a maximum of 4 items per row */
+    max-width: 200px; /* Max width for each item */
+    margin: 2% 0; /* Vertical margin between items */
+    padding: 3px; /* Padding inside each item */
+    border: 3px solid black; /* Border around each item */
+    border-radius: 2%; /* Rounded corners */
+    background-color: var(--yellow-color); /* Background color for each item */
+    text-align: center; /* Center the text */
+    
+}
+p {
+    font-size:15px;
+}
+h3 {
+    font-size:20px;
+}
+/* Image styling */
+#spend img {
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+}

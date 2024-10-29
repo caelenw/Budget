@@ -1,0 +1,158 @@
+/* Header Styles */
+:root {
+    --header-color: #B2ABF2;
+    --body-color: #FFEDE1;
+    --black-color: black;
+    --white-color: white;
+    --home-bb-color: #B2ABF2;
+    --home-color: #EBEBD3;
+    --content-color: #3BF4FB;
+    --bis-color: bisque;
+    --yellow-color: #CAF500;
+}
+body {
+    background-color: var(--home-bb-color);
+}
+header {
+    background-color: var(--home-bb-color);
+    position: relative; /* Added to position child elements absolutely */
+    height: 70px; /* Set a fixed height for the header */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+
+}
+#main-header {
+    padding: 10px 10px 0;
+    margin: 0 auto;
+    background-color: var(--bis-color);
+}
+
+#app-name {
+    text-align: center;
+    padding: 2%;
+    font-size: 24px; /* Added for better visibility */
+}
+
+/* Main Navigation */
+
+#main-nav {
+    display: flex;
+    justify-content: space-around; /* Adjust items to evenly distribute space */
+    align-items: center;
+    background-color: var(--home-bb-color);
+    width: 100%; /* Set to full width */
+    height: 50px; /* Fixed height for nav */
+    margin: 0; /* No margin to keep it flush */
+    border-radius: 5px;
+}
+
+#main-nav ul {
+    padding-left: 0;
+    display: flex; /* Ensures horizontal layout for navigation */
+    margin-bottom: 0; /* Adjusted to remove unnecessary margin */
+    width: 100%; /* Allow ul to take the full width of the nav */
+    justify-content: space-around; /* Space items evenly */
+
+}
+#h-title {
+    margin-bottom: 5px; /* Space between title and nav */
+}
+#h-title img {
+    margin-left: 41%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 15%;
+}
+
+#main-nav li {
+    list-style-type: none;
+    flex: 1; /* Allow each nav item to grow and shrink equally */
+    text-align: center; /* Center the text */
+    padding: 5px;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#main-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black-color);
+    padding: 5px;
+}
+
+#main-nav a img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 5px;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#main-nav .nav-text {
+    color: black;
+    font-size: 14px;
+}
+
+#main-nav a:hover .nav-text {
+    display: block;
+}
+label.toggle {
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+
+/* Header Utilities */
+#h-ul {
+    display: flex;
+    margin: 1px;
+    position: relative;
+    top: 5%;
+    right: 5%;
+}
+
+/* Style for h-logout */
+#h-logout {
+    position: absolute; /* Positioning it absolutely */
+    top: 10px; /* Adjust the distance from the top */
+    right: 10px; /* Adjust the distance from the right */
+    z-index: 1; /* Ensure it’s above other elements */
+    display:flex;
+}
+#login-modal {
+    position: absolute;
+    top: 20px; /* Position it just below the header */
+    right: 0px; /* Align with the logout button */
+    border: 1px solid #ccc; /* Add border for definition */
+    padding: 5px; /* Padding around modal content */
+    background-color: var(--yellow-color);
+}
+#h-ul img {
+    width: 25px;
+    height: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+#h-title img {
+    margin-left: 41%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 15%;
+}
+
+/* Toggle Navigation (if applicable) */
+.label.toggle {
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+
+#toggle-nav div {
+    width: 25px;
+    height: 2px;
+    background-color: var(--black-color);
+    margin: 6px 0;
+}
