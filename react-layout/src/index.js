@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './css/index.css';
 import Layout from "./Layout";
-import About from './pages/About'; // Adjust the path if necessary
+import About from './pages/About';
+import Admin from './pages/Admin';
 import Home from "./pages/Home";
 import Transaction from './pages/Transaction';
 import Upload from './pages/Upload';
@@ -12,11 +13,13 @@ const App = () => {
   return (
     <BrowserRouter>
     <Routes>
+
       <Route path="/" element={(<Layout />)} >
       <Route index element={(<Home />)} />  
-      <Route path="about" element={(About)} />
+      <Route path="About" element={(<About />)} />  
       <Route path="upload" element={(<Upload />)} />  
       <Route path="transaction" element={(<Transaction />)} />  
+      <Route path="admin" elements={(<Admin />)} />
 
     </Route>
     </Routes>
@@ -28,4 +31,3 @@ const App = () => {
 root.render(
   <App />
 );
-

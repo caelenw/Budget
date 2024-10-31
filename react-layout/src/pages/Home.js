@@ -3,24 +3,21 @@ import "../css/Home.css";
 const Home = () => {
     const [spendingData, setSpendingData] = useState([]);
 
-    // Function to fetch spending data
     const getSpending = async () => {
         const url = "https://caelenw.github.io/csce242/project/part6/example.json";
         try {
             const response = await fetch(url);
             const data = await response.json();
-            setSpendingData(data); // Update state with fetched data
+            setSpendingData(data); 
         } catch (error) {
-            console.error("Error fetching spending data:", error);
+            console.error("Problem Pullint Transactions", error);
         }
     };
 
-    // Effect hook to run getSpending on component mount
     useEffect(() => {
         getSpending();
     }, []);
 
-    // Function to render spending section for each item
     const getSpendingSection = (spendingItem) => {
         return (
             <section key={spendingItem.Item}>

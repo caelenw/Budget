@@ -3,27 +3,27 @@
     top:200px;
     margin: 20px;
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for the section */
-    border: 1px solid #ccc; /* Optional border */
-    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
 }
 
 #dark {
-    text-align: center; /* Centered heading */
+    text-align: center; 
 }
 
 table {
-    width: 100%; /* Full width table */
-    border-collapse: collapse; /* Collapse borders */
-    margin-top: 20px; /* Space above the table */
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px; 
 }
 
 th, td {
-    padding: 12px; /* Padding for cells */
-    border: 1px solid #ddd; /* Cell borders */
-    text-align: left; /* Align text to the left */
-}
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    text-align: left; 
 
 th {
-    background-color: #f2f2f2; /* Light gray background for header */
+    background-color: #f2f2f2; 
+}
 }

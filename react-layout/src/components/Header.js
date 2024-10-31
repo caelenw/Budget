@@ -71,9 +71,9 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/aboutUs">
-                            <img src={aboutIcon} alt="About Us" />
-                            <span className="nav-text">About Us</span>
+                        <Link to="/about">
+                            <img src={aboutIcon} alt="About" />
+                            <span className="nav-text">About</span>
                         </Link>
                     </li>
                     <li>
