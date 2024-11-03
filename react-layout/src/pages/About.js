@@ -1,9 +1,12 @@
 import React from 'react';
 import '../css/About.css';
+import katie from '../images/images1/images (1).jpeg';
+import craig from '../images/images1/images (2).jpeg';
+import kyle from '../images/images1/images (3).jpeg';
+import josh from '../images/images1/images (4).jpeg';
 
 const About = () => {
     return (
-        <section className="home-bb">
             <div id="hold">
                 <div id="bwg">
                     <div id="inner-bwg">
@@ -29,28 +32,27 @@ const About = () => {
                     <div id="mtt-content">
                         <div className="home-section" id="p-1">
                             <h3 id="dark">Josh</h3>
-                            <img src="images/images (4).jpeg" alt="Josh"/>
+                            <img src={josh} alt="Savings" />
                             <p id="dark">I’m dedicated to helping individuals navigate their financial journeys at Budget Within. I believe that understanding your finances is key to achieving your goals, and I focus on creating intuitive tools that empower our users to visualize their spending and make informed decisions.</p>
                         </div>
                         <div className="home-section" id="p-2">
                             <h3 id="dark">Kyle</h3>
-                            <img src="images/images (3).jpeg" alt="Kyle"/>
+                            <img src={kyle} alt="Savings" />
                             <p id="dark">As a finance enthusiast at Budget Within, I’m dedicated to helping people understand and manage their money better. My background in financial planning allows me to provide valuable insights that simplify budgeting and empower users to reach their financial goals.</p>
                         </div>
                         <div className="home-section" id="p-3">
-                            <h3 id="dark">Craig</h3>
-                            <img src="images/images (2).jpeg" alt="Craig"/>
+                        <h3 id="dark">Craig</h3>
+                        <img src={craig} alt="Savings" />
                             <p id="dark">I’m thrilled to be part of the Budget Within team, where I focus on creating user-friendly features that make financial management easier for everyone. With a background in software development and a keen interest in personal finance, I’m passionate about building tools that empower users to take charge of their spending.</p>
                         </div>
                         <div className="home-section" id="p-4">
                             <h3 id="dark">Katie</h3>
-                            <img src="images/images (1).jpeg" alt="Katie"/>
+                            <img src={katie} alt="Savings" />
                             <p id="dark">I’m excited to be part of the Budget Within team, where my focus is on enhancing user experience and ensuring that our platform is intuitive and engaging. With a background in user experience design, I’m passionate about creating seamless interactions that empower users to manage their finances with ease.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
     );
 }
 

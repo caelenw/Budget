@@ -1,6 +1,6 @@
 [
     {
-        "logo": "/images/images1/insurance.png", 
+        "logo": "../images/images1/insurance.png", 
         "Item": "Doctor Appointment",
         "Price": "$120",
         "Account": "Insurance",
@@ -12,7 +12,7 @@
         ]
     },
     {
-        "logo": "images/health.png",
+        "logo": "../images/images1/health.png",
         "Item": "Pharmacy Purchase",
         "Price": "$45",
         "Account": "Debit Card",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "logo": "images/rent.png",
+        "logo": "../images/images1/rent.png",
         "Item": "Monthly Rent",
         "Price": "$1200",
         "Account": "Bank Transfer",
@@ -36,7 +36,7 @@
         ]
     },
     {
-        "logo": "images/pets.png",
+        "logo": "../images/images1/pets.png",
         "Item": "Pet Food",
         "Price": "$30",
         "Account": "Credit Card",
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "logo": "images/insurance.png",
+        "logo": "../images/images1/insurance.png",
         "Item": "Health Insurance Premium",
         "Price": "$300",
         "Account": "Visa",
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "logo": "images/kids.png",
+        "logo": "../images/images1/kids.png",
         "Item": "Kids' Toys",
         "Price": "$50",
         "Account": "Master Card",
@@ -72,7 +72,7 @@
         ]
     },
     {
-        "logo": "images/debt.png",
+        "logo": "../images/images1/debt.png",
         "Item": "Credit Card Payment",
         "Price": "$200",
         "Account": "Debit Card",
@@ -84,7 +84,7 @@
         ]
     },
     {
-        "logo": "images/rent.png",
+        "logo": "../images/images1/rent.png",
         "Item": "Mortgage Payment",
         "Price": "$1500",
         "Account": "Bank Transfer",
@@ -96,7 +96,7 @@
         ]
     },
     {
-        "logo": "images/car.png",
+        "logo": "../images/images1/car.png",
         "Item": "Car Insurance",
         "Price": "$100",
         "Account": "Credit Card",
@@ -108,7 +108,7 @@
         ]
     },
     {
-        "logo": "images/savings.png",
+        "logo": "../images/images1/savings.png",
         "Item": "Savings Account Deposit",
         "Price": "$500",
         "Account": "Bank Transfer",
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "logo": "images/other.png",
+        "logo": "../images/images1/other.png",
         "Item": "Gift for a Friend",
         "Price": "$25",
         "Account": "Cash",
@@ -132,7 +132,7 @@
         ]
     },
     {
-        "logo": "images/health.png",
+        "logo": "../images/images1/health.png",
         "Item": "Gym Membership",
         "Price": "$40",
         "Account": "Credit Card",
@@ -144,7 +144,7 @@
         ]
     },
     {
-        "logo": "images/car.png",
+        "logo": "../images/images1/car.png",
         "Item": "Gasoline",
         "Price": "$30",
         "Account": "Debit Card",
@@ -156,7 +156,7 @@
         ]
     },
     {
-        "logo": "images/kids.png",
+        "logo": "../images/images1/kids.png",
         "Item": "School Supplies",
         "Price": "$15",
         "Account": "Cash",
@@ -168,7 +168,7 @@
         ]
     },
     {
-        "logo": "images/kids.png",
+        "logo": "../images/images1/kids.png",
         "Item": "Vet Check-up",
         "Price": "$70",
         "Account": "Debit Card",

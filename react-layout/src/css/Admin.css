@@ -1,0 +1,55 @@
+#userInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    position: absolute;
+    top:250px;
+    width:auto;
+    margin:5%;
+}
+#name, #img-admin, #admin-acct  {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+}
+
+#img-admin img {
+    max-width: 100%;
+    height: auto;
+}
+#admin-acct table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#admin-acct table td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid var(--white-color);
+}
+
+#name label, #name input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#name input {
+    padding: 8px;
+    border: 1px solid var(--white-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#name {
+    background-color: var(--home-bb-color);
+    border:3px;
+    border-radius: 3%;
+}
+#admin-table {
+    width:100%;
+}

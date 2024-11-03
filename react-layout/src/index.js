@@ -19,6 +19,8 @@ const App = () => {
       <Route path="About" element={(<About />)} />  
       <Route path="upload" element={(<Upload />)} />  
       <Route path="transaction" element={(<Transaction />)} />  
+      <Route path="admin" element={(<Admin />)} />  
+
       <Route path="admin" elements={(<Admin />)} />
 
     </Route>
