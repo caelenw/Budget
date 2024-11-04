@@ -2,7 +2,7 @@ import React from 'react';
 const Section = ({ spendingItem }) => {
     return (
         <section key={spendingItem.Item}>
-            <img src={spendingItem.logo} alt='Logo' />
+            <img src={spendingItem.logo} alt='img' />
             <h3>{spendingItem.Item}</h3>
             <p>Price: {spendingItem.Price}</p>
             <p>Account: {spendingItem.Account}</p>

@@ -6,7 +6,7 @@ const Home = () => {
     const [spendingData, setSpendingData] = useState([]);
 
     const getSpending = async () => {
-        const url = "https://caelenw.github.io/csce242/project/part6/example.json";
+        const url = "https://raw.githubusercontent.com/caelenw/Budget/refs/heads/main/react-layout/src/json/example.json";
         try {
             const response = await fetch(url);
             const data = await response.json();

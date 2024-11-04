@@ -20,7 +20,7 @@ const Transactions = () => {
     ];
 
     return (
-        <section className="home-bb">
+        <section className="home-bb" id="hbb">
             <h2 id="dark">View Transactions by Filter</h2>
             <h3 id="veiw">View Transactions by Filter</h3>
             <TransactionTable transactions={transactionData} />

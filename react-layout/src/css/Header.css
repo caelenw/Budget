@@ -1,30 +1,31 @@
-/* Header Styles */
 :root {
     --header-color: #B2ABF2;
     --body-color: #FFEDE1;
     --black-color: black;
     --white-color: white;
-    --home-bb-color: #B2ABF2;
+    --home-bb-color: #363537; /* Fixed extra hash */
     --home-color: #EBEBD3;
     --content-color: #3BF4FB;
     --bis-color: bisque;
     --yellow-color: #CAF500;
 }
+
 body {
-    background-color: var(--home-bb-color);
+    background-color: #AEE5D8;
 }
+
 header {
-    background-color: var(--home-bb-color);
+    background-color: #AEE5D8;
     position: relative; 
     height: 70px; 
     display: flex;
     flex-direction: column;
-
 }
+
 #main-header {
     padding: 10px 10px 0;
     margin: 0 auto;
-    background-color: var(--bis-color);
+    background-color: #AEE5D8;
 }
 
 #app-name {
@@ -33,18 +34,15 @@ header {
     font-size: 24px; 
 }
 
-
-/* Main Navigation */
 #main-nav {
     position: absolute;
     display: flex;
     justify-content: space-around; 
     align-items: center;
-    background-color: var(--home-bb-color);
+    background-color: #AEE5D8;
     width: 100%; 
     height: 80px; 
     margin: 0; 
-    
 }
 
 #main-nav ul {
@@ -52,11 +50,12 @@ header {
     display: flex; 
     width: 100%; 
     justify-content: space-around; 
-
 }
+
 #h-title {
     margin-bottom: 5px; 
 }
+
 #h-title img {
     margin-left: 41%;
     margin-top: 2%;
@@ -95,13 +94,13 @@ header {
 #main-nav a:hover .nav-text {
     display: block;
 }
+
 label.toggle {
     text-align: center;
     width: auto;
     justify-content: center;
 }
 
-/* Header Utilities */
 #h-ul {
     display: flex;
     margin: 1px;
@@ -110,39 +109,38 @@ label.toggle {
     right: 5%;
 }
 
-/* Style for h-logout */
 #h-logout {
     position: absolute; 
     top: 10px; 
     right: 10px; 
     z-index: 1; 
     background-color: transparent;
-
 }
 
 button.nav-user {
     background-color: transparent;
     border: none;
-    width:100px;
+    width: 100px;
 }
+
 @media screen and (max-width: 768px) {
     #main-nav ul {
-        display:flex;
+        display: flex;
         flex-direction: column;
         background-color: red;
-
     }
     #main-nav img {
-        display:none;
+        display: none;
     }
     #main-nav {
         height: auto;
     }
 }
+
 #login-modal {
     text-align: left;
-    width:150px;
-    height:175px;
+    width: 150px;
+    height: 175px;
     position: absolute;
     top: 20px; 
     right: 0px; 
@@ -150,16 +148,20 @@ button.nav-user {
     padding: 3px; 
     background-color: var(--yellow-color);
 }
+
 #close-model.close-button {
     text-align: right;
     align-items: right;
 }
+
 #login-bttn {
     text-align: center;
 }
+
 label {
     font-size: 15px;
 }
+
 #h-ul img {
     width: 25px;
     height: 25px;
@@ -167,13 +169,6 @@ label {
 
 .hidden {
     display: none;
-}
-
-#h-title img {
-    margin-left: 41%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 15%;
 }
 
 .label.toggle {

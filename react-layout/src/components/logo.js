@@ -1,15 +1,15 @@
-// LogoAndLogout.js
 import React from 'react';
+import '../css/login.css';
 import logo from '../images/budget-within-high-resolution-logo-transparent.png';
-
+import login from '../images/images1/login.png';
 const LogoAndLogout = ({ onLoginClick }) => {
     return (
         <div className="logo-and-logout">
             <div id="h-ul">
                 <div id="h-logout">
                     <button className="nav-user" onClick={onLoginClick}>
-                        <img src="images/login.png" alt="Login" />
-                        <label>Login</label>
+                    <img src={login} alt='logo' />
+                    <label>Login</label>
                     </button>
                 </div>
             </div>
@@ -21,3 +21,4 @@ const LogoAndLogout = ({ onLoginClick }) => {
 };
 
 export default LogoAndLogout;
+

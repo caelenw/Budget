@@ -1,61 +1,86 @@
-/* General table styles */
+:root {
+    --header-color: #B2ABF2;
+    --body-color: #FFEDE1;
+    --black-color: black;
+    --white-color: white;
+    --home-bb-color: #B2ABF2;
+    --home-color: #EBEBD3;
+    --content-color: #3BF4FB;
+    --bis-color: bisque;
+    --yellow-color: #CAF500;
+    --table-border-color: #ddd; /* Added variable for table border color */
+    --home-bb-bg-color: #473198; /* Added variable for home-bb background color */
+}
+
 table {
-    width: 100%; /* Makes the table take full width of its container */
-    border-collapse: collapse; /* Merges borders for a cleaner look */
-    table-layout: auto; /* Allows the table to adjust based on content */
+    width: 100%; 
+    border-collapse: collapse; 
+    table-layout: auto; 
     font-size: 55%;
-
 }
 
-/* Header and cell styles */
 th, td {
-    border: 1px solid #ddd; /* Light border around cells */
-    padding: 12px; /* Padding inside cells */
-    text-align: left; /* Align text to the left */
-    width:auto;
+    border: 1px solid var(--table-border-color); 
+    padding: 12px; 
+    text-align: left; 
+    width: auto;
 }
+
 .home-bb {
     position: absolute;
-    top:250px;
+    top: 250px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
+    background-color: var(--home-bb-bg-color);
+    color: var(--white-color);
+    border-radius: 5%;
 }
+
+section#hbb {
+    margin: 2.2%;
+}
+
 h2#dark {
-    margin:0;
+    margin: 0;
 }
-#veiw{
-    display:none;
+
+#veiw {
+    display: none;
 }
+
 select#t-dropdown-menu {
-    display:flex;
-    width:90px ; 
+    display: flex;
+    width: 90px; 
 }
+
 @media screen and (max-width: 768px) {
     .home-bb {
-     position: relative;
-     top:150px;
+        position: relative;
+        top: 150px;
     }
     h2 {
-        display:none;
+        display: none;
     }
     #veiw {
-        display:flex;
+        display: flex;
         position: relative;
-        top:100px;
-    }
- }
-@media screen and (min-width: 768px) {
-    select#t-dropdown-menu {
-        display:flex;
-        width:150px ; 
+        top: 100px;
     }
 }
+
 @media screen and (min-width: 768px) {
     select#t-dropdown-menu {
-        display:flex;
-        width:100% ; 
+        display: flex;
+        width: 150px; 
+    }
+}
+
+@media screen and (min-width: 768px) {
+    select#t-dropdown-menu {
+        display: flex;
+        width: 100%; 
     }
 }

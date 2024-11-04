@@ -1,34 +1,47 @@
-#hold {
-    display:flex;
-    flex-direction: column;
-    position:absolute;
-    top:300px;
-    text-align: center;
-    width:98%;
-    margin: 0px;
-    padding:0px;
+:root {
+    --primary-color: #473198; /* Define your primary background color */
+    --white-color: #ffffff; /* Define your text color */
+    --black-color: #000000; /* Define your border color */
+    /* Add any additional colors as needed */
 }
+
+#hold {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 300px;
+    text-align: center;
+    width: 98%;
+    margin: 0;
+    padding: 0;
+}
+
 h3 {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
+
 #bwg1 {
-    width:100%;
+    width: 100%;
 }
+
 #mtt {
     text-align: center;
 }
+
 #mtt-content {
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
 }
+
 #home-section {
-    border:2px solid black;
+    border: 2px solid var(--black-color);
     border-radius: 5px;
 }
+
 section.home-bb {
     display: flex;
     flex-direction: column;
@@ -38,66 +51,63 @@ section.home-bb {
     margin: auto;
     max-width: 90%;
 }
+
 #bwg {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    border: 3px solid black;
-    padding:2%;
-    margin-bottom:10px;
+    border: 3px solid var(--black-color);
+    padding: 2%;
+    margin-bottom: 10px;
     border-radius: 2%;
     text-align: center;
-
-    background-color: var(--header-color);
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
+
 #inner-bwg {
-    width:100%;
+    width: 100%;
 }
 
 #bwg1 {
-    margin-top:30px;
-
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
+
 #mtt-content {
     display: flex;
     justify-content: space-between;
     width: 98%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom:50px;
+    margin-bottom: 50px;
     text-align: center;
-
 }
 
 .home-section {
-    margin-top:30px;
+    margin-top: 30px;
     width: 23%; 
-    border: 3px solid black;
+    border: 3px solid var(--black-color);
     padding: 10px;
     text-align: center;
-    background-color: var(--header-color);
+    background-color: var(--primary-color);
     box-sizing: border-box; 
-    gap:15px;
+    color: var(--white-color);
+    gap: 15px;
 }
 
 .home-section img {
-    width:75%;
+    width: 75%;
 }
-
-
 
 @media screen and (max-width: 768px) {
     #mtt-content {
         flex-direction: column;
         align-items: center;
-        width:100%;
+        width: 100%;
     }
     .home-section {
-        width:70%;
+        width: 70%;
     }
-    
 }
-
