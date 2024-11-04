@@ -1,6 +1,6 @@
+// AdminTable.js
 import React from 'react';
-import '../css/Admin.css'; // Ensure to include the .css extension
-import mImg from '../images/savings-1.png';
+
 const AdminTable = () => {
     return (
         <div id="admin-acct" className="section">
@@ -44,34 +44,4 @@ const AdminTable = () => {
     );
 };
 
-const Admin = () => {
-    return (
-        <div id="admin-div">
-            <div id="userInfo" className="section">
-                <label htmlFor="fname">First name:</label>
-                <input type="text" id="fname" name="fname" /><br /><br />
-
-                <label htmlFor="lname">Last name:</label>
-                <input type="text" id="lname" name="lname" /><br /><br />
-
-                <label htmlFor="pwd">Password:</label>
-                <input type="password" id="pwd" name="pwd" /><br /><br />
-
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" /><br /><br />
-
-                <label htmlFor="phone">Phone number:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
-            </div>
-
-            <div id="img-admin" className="section">
-                <img src={mImg} alt="Savings" />
-            </div>
-
-            <AdminTable />
-         
-        </div>
-    );
-};
-
-export default Admin;
+export default AdminTable;

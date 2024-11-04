@@ -1,9 +1,8 @@
 import React from 'react';
-
 const Section = ({ spendingItem }) => {
     return (
         <section key={spendingItem.Item}>
-            <img src={spendingItem.logo} alt="Restaurant Logo" />
+            <img src={spendingItem.logo} alt='Logo' />
             <h3>{spendingItem.Item}</h3>
             <p>Price: {spendingItem.Price}</p>
             <p>Account: {spendingItem.Account}</p>

@@ -1,139 +1,29 @@
 import React from 'react';
+import TransactionTable from '../components/TransactionTable';
 import "../css/Transactions.css";
 
 const Transactions = () => {
+    const transactionData = [
+        { category: "Rent", account: "Checking", status: "Completed", price: "-2,300" },
+        { category: "Light bill", account: "Checking", status: "Completed", price: "-$89.29" },
+        { category: "Power", account: "Credit Card", status: "Unpaid", price: "-$253.33" },
+        { category: "Gas", account: "Credit Card", status: "Unpaid", price: "-$62.84" },
+        { category: "Groceries", account: "Visa", status: "Completed", price: "-$165.44" },
+        { category: "Movies", account: "Master Card", status: "Unpaid", price: "-$32.95" },
+        { category: "Investment", account: "Savings", status: "Completed", price: "-$231.24" },
+        { category: "Pay-Stub", account: "Checking Account", status: "Unpaid", price: "+$2,359.22" },
+        { category: "Venmo", account: "Checking Account", status: "Completed", price: "+$88.50" },
+        { category: "Netflix/Hulu", account: "Savings", status: "Completed", price: "-$10.99" },
+        { category: "Shopping", account: "Checking Account", status: "Paid", price: "-$438.23" },
+        { category: "Target", account: "Checking Account", status: "Unpaid", price: "-$103.22" },
+        { category: "Lulu", account: "Credit Card", status: "Paid", price: "-$10.99" },
+    ];
+
     return (
         <section className="home-bb">
             <h2 id="dark">View Transactions by Filter</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <select id="t-dropdown-menu">
-                                <option value="default" disabled selected>Select Category of Transaction</option>
-                                <option value="Food">Food</option>
-                                <option value="Health">Health</option>
-                                <option value="Savings">Savings</option>
-                                <option value="Rent">Rent</option>
-                                <option value="Pets">Pets</option>
-                                <option value="Insurance">Insurance</option>
-                                <option value="Kids">Kids</option>
-                                <option value="Debt">Debt</option>
-                                <option value="Rent/House">Rent/House</option>
-                                <option value="Car">Car</option>
-                                <option value="Other">Other</option>
-                            </select> 
-                        </th>
-                        <th>
-                            <select id="t-dropdown-menu">
-                                <option value="Status" disabled selected>Account Used In Transaction</option>
-                                <option value="Checking">Checking</option>    
-                                <option value="Credit">Credit</option>  
-                                <option value="Savings">Savings</option>  
-                                <option value="Other">Other</option>  
-                            </select>
-                        </th>
-                        <th>
-                            <select id="t-dropdown-menu">
-                                <option value="Status" disabled selected>Status of Transaction</option>
-                                <option value="Paid">Paid</option>    
-                                <option value="Pending">Pending</option>  
-                                <option value="Completed">Completed</option>  
-                            </select>
-                        </th>
-                        <th>
-                            <select id="t-dropdown-menu">
-                                <option value="Price" disabled selected>Price of Transaction</option>
-                                <option value="0-100">$0.00 - $100.00</option>    
-                                <option value="100-250">$101.00 - $250.00</option>  
-                                <option value="250-500">$251.00 - $500.00</option>  
-                                <option value="500+">$501.00 +</option>  
-                            </select>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* Transaction data can be dynamically generated here */}
-                    <tr>
-                        <td>Rent</td>
-                        <td>Checking</td>
-                        <td>Completed</td>
-                        <td>-2,300</td>
-                    </tr>
-                    <tr>
-                        <td>Light bill</td>
-                        <td>Checking</td>
-                        <td>Completed</td>
-                        <td>-$89.29</td>
-                    </tr>
-                    <tr>
-                        <td>Power</td>
-                        <td>Credit Card</td>
-                        <td>Unpaid</td>
-                        <td>-$253.33</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Credit Card</td>
-                        <td>Unpaid</td>
-                        <td>-$62.84</td>
-                    </tr>
-                    <tr>
-                        <td>Groceries</td>
-                        <td>Visa</td>
-                        <td>Completed</td>
-                        <td>-$165.44</td>
-                    </tr>
-                    <tr>
-                        <td>Movies</td>
-                        <td>Master Card</td>
-                        <td>Unpaid</td>
-                        <td>-$32.95</td>
-                    </tr>
-                    <tr>
-                        <td>Investment</td>
-                        <td>Savings</td>
-                        <td>Completed</td>
-                        <td>-$231.24</td>
-                    </tr>
-                    <tr>
-                        <td>Pay-Stub</td>
-                        <td>Checking Account</td>
-                        <td>Unpaid</td>
-                        <td>+$2,359.22</td>
-                    </tr>
-                    <tr>
-                        <td>Venmo</td>
-                        <td>Checking Account</td>
-                        <td>Completed</td>
-                        <td>+$88.50</td>
-                    </tr>
-                    <tr>
-                        <td>Netflix/Hulu</td>
-                        <td>Savings</td>
-                        <td>Completed</td>
-                        <td>-$10.99</td>
-                    </tr>
-                    <tr>
-                        <td>Shopping</td>
-                        <td>Checking Account</td>
-                        <td>Paid</td>
-                        <td>-$438.23</td>
-                    </tr>
-                    <tr>
-                        <td>Target</td>
-                        <td>Checking Account</td>
-                        <td>Unpaid</td>
-                        <td>-$103.22</td>
-                    </tr>
-                    <tr>
-                        <td>Lulu</td>
-                        <td>Credit Card</td>
-                        <td>Paid</td>
-                        <td>-$10.99</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3 id="veiw">View Transactions by Filter</h3>
+            <TransactionTable transactions={transactionData} />
         </section>
     );
 };

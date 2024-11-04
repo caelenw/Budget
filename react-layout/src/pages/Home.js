@@ -1,10 +1,8 @@
-// Home.js
 import React, { useEffect, useState } from 'react';
-import Section from '../components/section';
+import SpendingList from '../components/SpendingList';
 import "../css/Home.css";
 
 const Home = () => {
-
     const [spendingData, setSpendingData] = useState([]);
 
     const getSpending = async () => {
@@ -12,7 +10,7 @@ const Home = () => {
         try {
             const response = await fetch(url);
             const data = await response.json();
-            setSpendingData(data); 
+            setSpendingData(data);
         } catch (error) {
             console.error("Problem Pulling Transactions", error);
         }
@@ -24,11 +22,7 @@ const Home = () => {
 
     return (
         <div id="spend">
-            <div id="spending-section">
-                {spendingData.map(spendingItem => (
-                    <Section key={spendingItem.Item} spendingItem={spendingItem} />
-                ))}
-            </div>
+            <SpendingList spendingData={spendingData} />
         </div>
     );
 };

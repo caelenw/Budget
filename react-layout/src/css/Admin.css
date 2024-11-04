@@ -1,55 +1,90 @@
+/* General styles for the entire admin component */
+#admin-div {
+    display: flex; /* Use flexbox for layout */
+    position: relative;
+    top:180px;
+    flex-direction: row; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    gap:15px;
+}
+
+/* User Info section styling */
 #userInfo {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch; 
-    position: absolute;
-    top:250px;
-    width:auto;
-    margin:5%;
+    flex-direction: column; /* Stack labels and inputs vertically */
+    width: 90%; /* Set a width that adjusts to screen size */
+    max-width: 600px; /* Maximum width for user info */
 }
-#name, #img-admin, #admin-acct  {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    padding: 20px;
+@media screen and (max-width: 768px) {
+    #userInfo {
+        position: relative;
+        top:100px;
+    }
+    #admin-div {
+        display:flex;
+        flex-direction: column;
+    }
+    #admin-div img {
+        width:auto;
+        position: relative;
+        top:100px;
+    }
+    table {
+        position:relative;
+        top:100px;
+    }
+}
+
+
+#userInfo input {
+    padding: 5px; /* Padding inside inputs */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Full width for inputs */
+}
+
+/* Image section styling */
+#img-admin {
+    display: flex; /* Flexbox for image alignment */
+    justify-content: center; /* Center the image */
+    margin-bottom: 20px; /* Space below the image */
+    width: 90%; /* Set a width that adjusts to screen size */
 }
 
 #img-admin img {
-    max-width: 100%;
-    height: auto;
-}
-#admin-acct table {
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse;
-    text-align: center;
+    max-width: 98%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: add rounded corners */
 }
 
-#admin-acct table td {
-    text-align: center;
-    padding: 8px;
-    border: 1px solid var(--white-color);
+/* Admin table section styling */
+#admin-acct {
+    width: 90%; /* Set a width that adjusts to screen size */
+    max-width: 800px; /* Maximum width for the table */
 }
 
-#name label, #name input {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-#name input {
-    padding: 8px;
-    border: 1px solid var(--white-color);
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#name {
-    background-color: var(--home-bb-color);
-    border:3px;
-    border-radius: 3%;
-}
 #admin-table {
-    width:100%;
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+#admin-table td {
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding inside table cells */
+    border: 1px solid var(--white-color); /* Border styling */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #userInfo,
+    #img-admin,
+    #admin-acct {
+        width: 95%; /* Slightly adjust width on smaller screens */
+    }
+
+    #userInfo input {
+        padding: 8px; /* Reduce padding in inputs on smaller screens */
+    }
 }
