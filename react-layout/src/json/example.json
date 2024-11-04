@@ -1,6 +1,6 @@
 [
     {
-        "logo": "../images/images1/insurance.png", 
+        "logo": "insurance",
         "Item": "Doctor Appointment",
         "Price": "$120",
         "Account": "Insurance",
