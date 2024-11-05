@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Admin.css'; // Ensure to include the .css extension
+import '../css/Admin.css';
 import mImg from '../images/savings-1.png';
 const AdminTable = () => {
     return (

@@ -10,7 +10,7 @@
     --yellow-color: #CAF500;
     --upload-bg-color: #f9f9f9; 
     --upload-border-color: #ccc; 
-    --upload-button-bg-color: #28a745; 
+    --upload-button-bg-color: #000000; 
     --upload-button-hover-bg-color: #218838; 
 }
 
@@ -21,7 +21,7 @@
     margin: 20px auto; 
     padding: 20px;
     border: 1px solid var(--upload-border-color); 
-    border-radius: 8px; 
+    border-radius: 5px; 
     background-color: var(--upload-bg-color); 
 }
 
@@ -65,7 +65,7 @@
     background-color: var(--upload-button-bg-color); 
     color: var(--white-color); 
     border: none; 
-    border-radius: 4px; 
+    border-radius: 5px; 
     cursor: pointer; 
 }
 
