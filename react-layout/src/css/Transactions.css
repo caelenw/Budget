@@ -12,23 +12,33 @@
     --home-bb-bg-color: #473198; /* Added variable for home-bb background color */
 }
 
+body {
+    margin: 0; /* Reset margin to remove default body margin */
+}
+
 table {
-    width: 100%; 
-    border-collapse: collapse; 
-    table-layout: auto; 
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensure table takes 100% width with fixed layout */
     font-size: 55%;
+    max-width: 100%; /* Ensure table does not exceed the width of its container */
 }
 
 th, td {
-    border: 1px solid var(--table-border-color); 
-    padding: 12px; 
-    text-align: left; 
-    width: auto;
+    border: 1px solid var(--table-border-color);
+    padding: 12px;
+    text-align: left;
+    overflow: hidden; /* Prevent overflow of content */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+th {
+    background-color: var(--header-color); /* Optional: Header background color */
 }
 
 .home-bb {
     position: absolute;
-    top: 250px;
+    top: 250px; /* Adjust as necessary */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -37,10 +47,13 @@ th, td {
     background-color: var(--home-bb-bg-color);
     color: var(--white-color);
     border-radius: 5%;
+    padding: 10px; /* Added padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Add shadow for better visibility */
 }
 
 section#hbb {
     margin: 2.2%;
+    padding-bottom: 20px; /* Add bottom padding to prevent cutting off content */
 }
 
 h2#dark {
@@ -53,39 +66,47 @@ h2#dark {
 
 select#t-dropdown-menu {
     display: flex;
-    width: 90px; 
+    width: 90px;
 }
 
 @media screen and (max-width: 768px) {
     .home-bb {
         position: relative;
-        top: 150px;
+        top: 220px; /* Adjust positioning as needed */
     }
     h2 {
-        display: none;
+        display: none; /* Hide the heading on small screens */
     }
     #veiw {
         display: flex;
         position: relative;
-        top: 100px;
+        top: 10px; /* Adjust as necessary */
+    }
+    table {
+        position: relative;
+        top:10px;
+        font-size: 50%; /* Adjust font size for smaller screens */
+    }
+    th, td {
+        white-space: normal; /* Allow wrapping in cells on smaller screens */
     }
 }
+
 @media screen and (min-width: 1600px) {
     .home-bb {
-        position:relative;
-        top:300px;
+        position: relative;
+        top: 300px;
     }
- }
-@media screen and (min-width: 768px) {
-    select#t-dropdown-menu {
+    #veiw {
         display: flex;
-        width: 150px; 
+        position: absolute;
+        top: 300px; /* Adjust as necessary */
     }
 }
 
 @media screen and (min-width: 768px) {
     select#t-dropdown-menu {
         display: flex;
-        width: 100%; 
+        width: 150px;
     }
 }

@@ -86,7 +86,7 @@ label {
 
 #admin-table td {
     text-align: center; 
-    padding: 20px; 
+    padding: 10px; 
     border: 1px solid var(--white-color); 
 }
 
@@ -99,5 +99,8 @@ label {
 
     #userInfo input {
         padding: 8px; 
+    }
+    #admin-table {
+        margin-top:100px;
     }
 }

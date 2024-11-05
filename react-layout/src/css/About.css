@@ -106,6 +106,9 @@ section.home-bb {
         align-items: center;
         width: 100%;
     }
+    #bwg {
+        margin-left:5px;
+    }
     .home-section {
         width: 70%;
     }
