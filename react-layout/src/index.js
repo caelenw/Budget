@@ -11,8 +11,9 @@ import Upload from './pages/Upload';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const App = () => {
   return (
-    <BrowserRouter>
-    <Routes>
+<BrowserRouter basename={process.env.PUBLIC_URL}>
+
+<Routes>
 
       <Route path="/" element={(<Layout />)} >
       <Route index element={(<Home />)} />  
