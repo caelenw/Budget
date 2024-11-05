@@ -31,7 +31,12 @@
        top: 225px;
    }
 }
-
+@media screen and (min-width: 1600px) {
+    #upload-bottom {
+        position: relative;
+        top: 300px;
+    }
+ }
 #upload-bottom h2 {
     text-align: center;
 }

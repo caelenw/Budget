@@ -2,7 +2,6 @@
     --primary-color: #473198; /* Define your primary background color */
     --white-color: #ffffff; /* Define your text color */
     --black-color: #000000; /* Define your border color */
-    /* Add any additional colors as needed */
 }
 
 #hold {
@@ -111,3 +110,9 @@ section.home-bb {
         width: 70%;
     }
 }
+@media screen and (min-width: 1600px) {
+   #hold {
+    position:absolute;
+    top:350px;
+   }
+ }

@@ -36,7 +36,12 @@ body {
     box-sizing: border-box; 
     background-color: var(--section-bg-color);
 }
-
+@media screen and (min-width: 1550px) {
+ #spend {
+    position:absolute;
+    top:350px;
+ }   
+}
 #spend section {
     flex: 1 1 calc(50% - 10px); 
     max-width: 200px; 

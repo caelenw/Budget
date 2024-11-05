@@ -70,7 +70,12 @@ select#t-dropdown-menu {
         top: 100px;
     }
 }
-
+@media screen and (min-width: 1600px) {
+    .home-bb {
+        position:relative;
+        top:300px;
+    }
+ }
 @media screen and (min-width: 768px) {
     select#t-dropdown-menu {
         display: flex;

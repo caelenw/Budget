@@ -15,10 +15,14 @@
 }
 
 #userInfo {
-    display: flex;
-    flex-direction: column; 
     width: 90%; 
     max-width: 600px; 
+    background-color: #473197;
+    color:white;
+    padding:10px;
+    border: 3px;
+    border-radius: 3%;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -40,13 +44,21 @@
         top: 100px;
     }
 }
-
+@media screen and (min-width: 1600px) {
+    #admin-div {
+        position: absolute;
+        top:320px;
+    }
+ }
 #userInfo input {
-    padding: 5px; 
+    padding: 4px; 
     border-radius: 4px; 
-    width: 100%; 
+    width: 97%; 
+    
 }
-
+label {
+    font-size: 18px;
+}
 #img-admin {
     display: flex; 
     justify-content: center; 
@@ -68,11 +80,13 @@
 #admin-table {
     width: 100%; 
     border-collapse: collapse; 
+    background-color: #473197;
+    color:white;
 }
 
 #admin-table td {
     text-align: center; 
-    padding: 10px; 
+    padding: 20px; 
     border: 1px solid var(--white-color); 
 }
 
