@@ -8,20 +8,20 @@
     --content-color: #3BF4FB;
     --bis-color: bisque;
     --yellow-color: #CAF500;
-    --table-border-color: #ddd; /* Added variable for table border color */
-    --home-bb-bg-color: #473198; /* Added variable for home-bb background color */
+    --table-border-color: #ddd; 
+    --home-bb-bg-color: #473198; 
 }
 
 body {
-    margin: 0; /* Reset margin to remove default body margin */
+    margin: 0; 
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Ensure table takes 100% width with fixed layout */
+    table-layout: fixed; 
     font-size: 55%;
-    max-width: 100%; /* Ensure table does not exceed the width of its container */
+    max-width: 100%;
 }
 
 th, td {
