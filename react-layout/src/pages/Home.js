@@ -32,10 +32,10 @@ const Home = () => {
             const response = await fetch(url);
             const data = await response.json();
 
-            // Map logo names to the actual logo imports
+            
             const updatedData = data.map(item => ({
                 ...item,
-                logo: logoMap[item.logo] || null, // Set logo to null if not found
+                logo: logoMap[item.logo] || null, 
             }));
 
             setSpendingData(updatedData);
