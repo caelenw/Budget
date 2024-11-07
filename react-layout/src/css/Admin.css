@@ -1,7 +1,136 @@
 :root {
     --white-color: #ffffff; 
 }
+#topAdmin {
+    position: absolute;
+    top:38%;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#infoA {
+    min-width:20%;
+    flex-direction: column;
+    padding:0%;
+    background-color: white;
+    margin:5%;
+    padding:1%;
+    border: 2px;
+    background-color:#473197 ;
+    border-radius: 4%;
+    color: white;
+    min-height: 50%;
+    display:flex;
+    justify-content: space-between;
+}
+. {
+    text-align: center;
+    margin-bottom:50px;
+}
+input#Fname {
+    display:flex;
+}
+/* Middle top img styles for admin page */
+#imgA {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    max-width:41%; 
+    max-height:50%;
+    padding:3%;
+    min-width:31%;
+    
+    
+}
+.responsive-img {
+    max-width: 100%;
+    height: auto; 
+    flex-shrink: 1; 
 
+    margin:5%;
+    padding:1%;
+    border: 2px;
+}
+
+#acctA {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.table-container {
+    justify-content: center; /* Center the table within the container */
+    align-items: center;
+   
+    width: 72%;
+    align-items: center;
+    margin-left: 15%;
+}
+
+.adminT {
+    width: 100%; /* Table width set to 30% of its parent container */
+    max-width: 100%;
+    margin: auto; /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+.adminT td, .adminT th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 668px) {
+   #imgA {
+    flex:1;
+    min-width:auto;
+   }
+   #topAdmin {
+    flex:1;
+    flex-direction: column;
+   }
+   #infoA {
+    min-width:90%;
+    justify-content: center;
+    display: flex;
+   }
+
+   #imgA {
+    min-width:95%;
+    flex-direction: column;
+    padding:0%;
+    margin:1%;
+    padding:1%;
+    border: 2px;
+    border-radius: 4%;
+    color: white;
+    
+}
+.responsive-img {
+    min-width:95%;
+    justify-content: center;
+    display: flex; 
+}
+.table-container {
+    justify-content: center; /* Center the table within the container */
+    align-items: center;
+   
+    width: 92%;
+    align-items: center;
+    margin-left: 5%;
+}
+#vid {
+    width:92%;
+    display:flex;
+}
+}
+#videoFrame {
+    margin-top:20px;
+    margin-bottom:20px;
+
+}
+/*
 #admin-div {
     display: flex; 
     position: relative;
@@ -104,3 +233,4 @@ label {
         margin-top:100px;
     }
 }
+*/

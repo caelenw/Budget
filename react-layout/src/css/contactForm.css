@@ -1,0 +1,30 @@
+div.contactForm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background-color: red;
+    background-image: url('../images/b1.jpg');
+    background-size: cover;
+    margin-bottom: 10%;;
+    margin-top: 10%;;
+    border-radius: 5px;
+   
+
+
+}
+    
+#contact-form {
+    width: 100%;
+    min-width:  1000px ;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+}
+form.contact-form {
+    width:1000px;
+}

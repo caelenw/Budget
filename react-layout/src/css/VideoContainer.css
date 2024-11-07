@@ -1,0 +1,18 @@
+#vid {
+    margin-top:50px;
+    display:flex;
+    margin-top:20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    gap:20px;
+    justify-content: space-evenly;
+}
+div.videos{
+    font-size: 50%;
+    justify-content: CENTER;
+    text-align: center;
+}
+div#videos {
+    justify-content: center;
+}

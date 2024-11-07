@@ -11,7 +11,7 @@
     top: 300px;
     text-align: center;
     width: 98%;
-    margin: 0;
+    margin: 1%;
     padding: 0;
 }
 
@@ -55,13 +55,15 @@ section.home-bb {
     display: flex;
     flex-direction: column;
     border: 3px solid var(--black-color);
-    padding: 2%;
+    padding: 5%;
     margin-bottom: 10px;
     border-radius: 2%;
     text-align: center;
     background-color: var(--primary-color);
     color: var(--white-color);
+    font-size: 20px;
 }
+
 
 #inner-bwg {
     width: 100%;
