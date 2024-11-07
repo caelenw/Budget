@@ -40,7 +40,7 @@ const Home = () => {
 
             setSpendingData(updatedData);
         } catch (error) {
-            console.error("Problem Pulling Transactions", error);
+            console.error("Problem  Transactions", error);
         }
     };
 
