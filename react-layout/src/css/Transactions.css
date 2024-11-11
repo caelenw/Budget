@@ -72,7 +72,8 @@ select#t-dropdown-menu {
 @media screen and (max-width: 768px) {
     .home-bb {
         position: relative;
-        top: 220px;
+        top: 320px;
+        margin-bottom: 20px;
     }
     h2 {
         display: none; 

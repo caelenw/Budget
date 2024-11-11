@@ -51,6 +51,9 @@ header {
     width: 100%; 
     justify-content: space-around; 
 }
+button.nav-user  img{
+    width:40px;
+}
 
 #h-title {
     margin-bottom: 5px; 
@@ -113,8 +116,9 @@ label.toggle {
     position: absolute; 
     top: 10px; 
     right: 10px; 
-    z-index: 1; 
+    z-index: 0; 
     background-color: transparent;
+
 }
 
 button.nav-user {
@@ -125,61 +129,46 @@ button.nav-user {
 
 @media screen and (max-width: 768px) {
     #main-nav ul {
-        display: flex;
+        display: none;
         flex-direction: column;
-        background-color: red;
+        background-color: #AEE5D8;
     }
+    
     #main-nav img {
         display: none;
     }
+    
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger-icon {
+        width: 25px;
+        height: 5px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+    
+    #main-nav ul.show {
+        display: block;
+    }
+
     #main-nav {
         height: auto;
     }
 }
 
-#login-modal {
-    text-align: left;
-    width: 150px;
-    height: 175px;
-    position: absolute;
-    top: 20px; 
-    right: 0px; 
-    border: 1px solid #ccc; 
-    padding: 3px; 
-    background-color: var(--yellow-color);
-}
-
-#close-model.close-button {
-    text-align: right;
-    align-items: right;
-}
-
-#login-bttn {
-    text-align: center;
-}
-
-label {
-    font-size: 15px;
-}
-
-#h-ul img {
-    width: 25px;
-    height: 25px;
-}
-
-.hidden {
-    display: none;
-}
-
-.label.toggle {
-    text-align: center;
-    width: auto;
-    justify-content: center;
-}
-
-#toggle-nav div {
-    width: 25px;
-    height: 2px;
-    background-color: var(--black-color);
-    margin: 6px 0;
+@media screen and (min-width: 769px) {
+    #main-nav ul {
+        display: flex;
+        flex-direction: row;
+        background-color: #AEE5D8;
+    }
+    
+    .hamburger {
+        display: none; 
+    }
 }

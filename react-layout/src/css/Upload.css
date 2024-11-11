@@ -16,7 +16,7 @@
 
 #upload-bottom {
     position: relative;
-    top: 180px;
+    top: 380px;
     max-width: 600px; 
     margin: 20px auto; 
     padding: 20px;
@@ -28,7 +28,7 @@
 @media screen and (max-width: 768px) {
    #upload-bottom {
        position: relative;
-       top: 225px;
+       top: 300px;
    }
 }
 @media screen and (min-width: 1600px) {

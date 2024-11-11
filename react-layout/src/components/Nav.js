@@ -1,5 +1,4 @@
-// Nav.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import aboutIcon from "../images/aboutUs.png";
 import adminIcon from "../images/admin.png";
@@ -8,9 +7,21 @@ import transactionIcon from "../images/trans.png";
 import uploadIcon from "../images/upload.png";
 
 const Nav = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <nav id="main-nav">
-            <ul id="nav-items" className="columns hidden-small">
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className="hamburger-icon"></div>
+                <div className="hamburger-icon"></div>
+                <div className="hamburger-icon"></div>
+            </div>
+
+            <ul id="nav-items" className={`columns ${isMenuOpen ? 'show' : 'hidden-small'}`}>
                 <li>
                     <Link to="/">
                         <img src={homeIcon} alt="Home" />
