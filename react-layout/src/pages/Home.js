@@ -27,26 +27,25 @@ const Home = () => {
     };
 
     const getSpending = async () => {
-        const url = "https://budget-backend-yh3v.onrender.com/api/spending/";
+        const url = "http://localhost:3002/api/spending";
         try {
             const response = await fetch(url);
             const data = await response.json();
 
-            
             const updatedData = data.map(item => ({
                 ...item,
-                logo: logoMap[item.logo] || null, 
+                logo: logoMap[item.logo] || null,
             }));
 
             setSpendingData(updatedData);
         } catch (error) {
-            console.error("Problem  Transactions", error);
+            console.error("Problem with fetching transactions", error);
         }
     };
 
     useEffect(() => {
         getSpending();
-    }, []);
+    }, []);  
 
     return (
         <div id="spend">
