@@ -63,7 +63,7 @@ const TransactionForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:3002/api/spending", formData);
+      await axios.post("https://budget-backend-yh3v.onrender.com/api/spending/", formData);
       setSubmissionStatus("Transaction Was Added Successfully!");
       setTransaction({
         logo: "default",
@@ -172,17 +172,6 @@ const TransactionForm = () => {
           onChange={handleChange}
         />
       </div>
-
-      {transaction.logo !== "default" && (
-        <div id="logo-display">
-          <img
-            src={`/images/${transaction.logo}`}
-            alt={transaction.Categorie}
-            width="100" 
-          />
-          <p>{transaction.Categorie} logo</p>
-        </div>
-      )}
 
       <div id="upload-btn">
         <button onClick={handleSubmit} id="upload-button">
