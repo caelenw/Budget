@@ -1,4 +1,3 @@
-// LoginModal.js
 import React from 'react';
 import '../css/model.css';
 const LoginModal = ({ isOpen, onClose }) => {
