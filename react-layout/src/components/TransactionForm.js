@@ -3,20 +3,20 @@ import React, { useState } from "react";
 
 const TransactionForm = () => {
   const categoryToLogo = {
-    Food: "food.png",
-    Health: "health.png",
-    Savings: "savings.png",
-    Rent: "rent.png",
-    Pets: "pets.png",
-    Insurance: "insurance.png",
-    Kids: "kids.png",
-    Debt: "debt.png",
-    Car: "car.png",
-    Other: "other.png",
+    Food: "food",
+    Health: "health",
+    Savings: "savings",
+    Rent: "rent",
+    Pets: "pets",
+    Insurance: "insurance",
+    Kids: "kids",
+    Debt: "debt",
+    Car: "car",
+    Other: "other",
   };
 
   const [transaction, setTransaction] = useState({
-    logo: "default", 
+    logo: "default",
     Item: "",
     Price: "",
     Account: "default",
@@ -27,9 +27,11 @@ const TransactionForm = () => {
   });
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
-
+let logo = "";
   const handleChange = (e) => {
     const { id, value } = e.target;
+
+    logo = categoryToLogo[value] || "default";
 
     if (id === "Categorie") {
       setTransaction({
@@ -37,6 +39,8 @@ const TransactionForm = () => {
         [id]: value,
         logo: categoryToLogo[value] || "default", 
       });
+      console.log("set transaction:");
+      console.log(categoryToLogo[value]);
     } else {
       setTransaction({
         ...transaction,
@@ -54,16 +58,24 @@ const TransactionForm = () => {
     }
 
     const formData = new FormData();
+    
     for (let key in transaction) {
       if (key === "Comments" && transaction[key]) {
+        console.log(key + " " + transaction[key]);
         formData.append(key, JSON.stringify([transaction[key]]));
       } else {
         formData.append(key, transaction[key]);
       }
     }
 
+    //formData.append("logo", logo || "default");
+    console.log(...formData);
+
     try {
-      await axios.post("https://budget-backend-yh3v.onrender.com/api/spending/", formData);
+      await axios.post(
+        "https://budget-backend-yh3v.onrender.com/api/spending/",
+        formData
+      );
       setSubmissionStatus("Transaction Was Added Successfully!");
       setTransaction({
         logo: "default",
@@ -78,6 +90,7 @@ const TransactionForm = () => {
     } catch (error) {
       setSubmissionStatus("Error adding the transaction.");
     }
+    console.log("Image path:", transaction.logo); 
   };
 
   return (
@@ -106,12 +119,10 @@ const TransactionForm = () => {
 
       <div id="account">
         <label htmlFor="Account">Account:</label>
-        <select
-          id="Account"
-          value={transaction.Account}
-          onChange={handleChange}
-        >
-          <option value="default" disabled>Select Account</option>
+        <select id="Account" value={transaction.Account} onChange={handleChange}>
+          <option value="default" disabled>
+            Select Account
+          </option>
           <option value="Checking">Checking</option>
           <option value="Credit">Credit</option>
           <option value="Savings">Savings</option>
@@ -136,7 +147,9 @@ const TransactionForm = () => {
           value={transaction.Categorie}
           onChange={handleChange}
         >
-          <option value="default" disabled>Select Category</option>
+          <option value="default" disabled>
+            Select Category
+          </option>
           <option value="Food">Food</option>
           <option value="Health">Health</option>
           <option value="Savings">Savings</option>
@@ -152,12 +165,10 @@ const TransactionForm = () => {
 
       <div id="status">
         <label htmlFor="Status">Status:</label>
-        <select
-          id="Status"
-          value={transaction.Status}
-          onChange={handleChange}
-        >
-          <option value="default" disabled>Select Status</option>
+        <select id="Status" value={transaction.Status} onChange={handleChange}>
+          <option value="default" disabled>
+            Select Status
+          </option>
           <option value="Paid">Paid</option>
           <option value="Pending">Pending</option>
           <option value="Completed">Completed</option>
@@ -179,11 +190,7 @@ const TransactionForm = () => {
         </button>
       </div>
 
-      {submissionStatus && (
-        <div id="submission-status">
-          {submissionStatus}
-        </div>
-      )}
+      {submissionStatus && <div id="submission-status">{submissionStatus}</div>}
     </div>
   );
 };

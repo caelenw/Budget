@@ -9,8 +9,8 @@ import kidsLogo from '../images/images1/kids.png';
 import otherLogo from '../images/images1/other.png';
 import petsLogo from '../images/images1/pets.png';
 import rentLogo from '../images/images1/rent.png';
+import foodLogo from '../images/images1/restaurant.png';
 import savingsLogo from '../images/images1/savings.png';
-
 const Home = () => {
     const [spendingData, setSpendingData] = useState([]);
 
@@ -24,6 +24,7 @@ const Home = () => {
         other: otherLogo,
         kids: kidsLogo,
         debt: debtLogo,
+        food: foodLogo,
     };
 
     const getSpending = async () => {
