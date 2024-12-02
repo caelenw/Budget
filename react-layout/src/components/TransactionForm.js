@@ -73,7 +73,7 @@ let logo = "";
 
     try {
       await axios.post(
-        "https://budget-backend-yh3v.onrender.com/api/spending/",
+        "http://localhost:3003/api/spending/",
         formData
       );
       setSubmissionStatus("Transaction Was Added Successfully!");

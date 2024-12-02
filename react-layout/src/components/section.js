@@ -1,8 +1,10 @@
 import React from 'react';
-
-const Section = ({ spendingItem }) => {
+import '../css/Section.css';
+const Section = ({ spendingItem, onEdit, onDelete }) => {
     return (
-        <section>
+        <section className="section">
+          
+            
             <img src={spendingItem.logo} alt={spendingItem.Item} />
             <h3>{spendingItem.Item}</h3>
             <p>Price: {spendingItem.Price}</p>
@@ -16,4 +18,3 @@ const Section = ({ spendingItem }) => {
 };
 
 export default Section;
-
