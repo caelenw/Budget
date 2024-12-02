@@ -6,7 +6,7 @@ const Transaction = () => {
     const [transactions, setTransactions] = useState([]);
 
     const fetchTransactions = async () => {
-        const url = "http://localhost:3003/api/spending/";
+        const url = "https://budget-backend-yh3v.onrender.com/api/spending/";
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -16,11 +16,14 @@ const Transaction = () => {
         }
     };
 
+    const [successMessage, setSuccessMessage] = useState('');
+
     const onDelete = async (transaction) => {
-        const url = `http://localhost:3003/api/spending/${transaction._id}`;
+        const url = `https://budget-backend-yh3v.onrender.com/api/spending/${transaction._id}`;
         try {
             const response = await fetch(url, { method: 'DELETE' });
-            if (response.ok) {
+            if (response.status === 200) {
+                setSuccessMessage('Transaction deleted successfully!');
                 setTransactions((prevTransactions) =>
                     prevTransactions.filter((t) => t._id !== transaction._id)
                 );
@@ -31,6 +34,7 @@ const Transaction = () => {
             console.error('Error deleting the transaction:', error);
         }
     };
+
 
     useEffect(() => {
         fetchTransactions();
@@ -44,7 +48,12 @@ const Transaction = () => {
                 setTransactions={setTransactions}
                 onDelete={onDelete}
             />
+            <div>
+            {successMessage && <p>{successMessage}</p>} 
+   
         </div>
+        </div>
+        
     );
 };
 

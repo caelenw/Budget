@@ -31,7 +31,7 @@ const Modal = ({ transaction, onClose, onSave, setTransactions }) => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3003/api/spending/${editedTransaction._id}`,
+        `https://budget-backend-yh3v.onrender.com/api/spending/${editedTransaction._id}`,
         editedTransaction
       );
 

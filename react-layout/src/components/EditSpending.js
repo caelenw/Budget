@@ -29,7 +29,7 @@ const EditSpending = (props) => {
     setResult("Sending....");
 
     const formData = new FormData(event.target);
-    const response = await fetch(`http://localhost:3003/api/spending/${props._id}`, {
+    const response = await fetch(`https://budget-backend-yh3v.onrender.com/api/spending/${props._id}`, {
       method: "PUT",
       body: formData,
     });
@@ -100,7 +100,6 @@ const EditSpending = (props) => {
                 required
               />
             </p>
-
             <section className="columns">
               <p id="img-prev-section">
                 <img
@@ -109,7 +108,7 @@ const EditSpending = (props) => {
                     inputs.img != null
                       ? URL.createObjectURL(inputs.img)
                       : inputs.prev_img != null
-                      ? `http://localhost:3003/images/${inputs.prev_img}`
+                      ? `https://budget-backend-yh3v.onrender.com/images/${inputs.prev_img}`
                       : ""
                   }
                   alt=""
