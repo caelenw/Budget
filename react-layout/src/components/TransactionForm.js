@@ -27,11 +27,9 @@ const TransactionForm = () => {
   });
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
-let logo = "";
+
   const handleChange = (e) => {
     const { id, value } = e.target;
-
-    logo = categoryToLogo[value] || "default";
 
     if (id === "Categorie") {
       setTransaction({
@@ -39,8 +37,6 @@ let logo = "";
         [id]: value,
         logo: categoryToLogo[value] || "default", 
       });
-      console.log("set transaction:");
-      console.log(categoryToLogo[value]);
     } else {
       setTransaction({
         ...transaction,
@@ -58,23 +54,12 @@ let logo = "";
     }
 
     const formData = new FormData();
-    
     for (let key in transaction) {
-      if (key === "Comments" && transaction[key]) {
-        console.log(key + " " + transaction[key]);
-        formData.append(key, JSON.stringify([transaction[key]]));
-      } else {
-        formData.append(key, transaction[key]);
-      }
+      formData.append(key, transaction[key]);
     }
 
-    console.log(...formData);
-
     try {
-      await axios.post(
-        "https://budget-backend-yh3v.onrender.com/api/spending/",
-        formData
-      );
+      await axios.post("http://localhost:3003/api/spending/", formData);
       setSubmissionStatus("Transaction Was Added Successfully!");
       setTransaction({
         logo: "default",
@@ -89,11 +74,10 @@ let logo = "";
     } catch (error) {
       setSubmissionStatus("Error adding the transaction.");
     }
-    console.log("Image path:", transaction.logo); 
   };
 
   return (
-    <div id="upload-bottom">
+    <form onSubmit={handleSubmit} id="upload-bottom">
       <h2>Please Enter The Transaction Below:</h2>
 
       <div id="item">
@@ -184,13 +168,13 @@ let logo = "";
       </div>
 
       <div id="upload-btn">
-        <button onClick={handleSubmit} id="upload-button">
+        <button type="submit" id="upload-button">
           Upload Transaction
         </button>
       </div>
 
       {submissionStatus && <div id="submission-status">{submissionStatus}</div>}
-    </div>
+    </form>
   );
 };
 

@@ -7,19 +7,16 @@ const TransactionTable = ({ transactions, setTransactions, onDelete }) => {
     const [selectedTransaction, setSelectedTransaction] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Open the modal and set the transaction to be edited
     const handleEditClick = (transaction) => {
         setSelectedTransaction(transaction);
         setIsModalOpen(true);
     };
 
-    // Close the modal
     const handleModalClose = () => {
         setIsModalOpen(false);
     };
 
     const handleSaveTransaction = (updatedTransaction) => {
-        // Update the transaction in the parent state
         setTransactions((prevTransactions) =>
             prevTransactions.map((transaction) =>
                 transaction._id === updatedTransaction._id

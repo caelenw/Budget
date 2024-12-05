@@ -28,7 +28,7 @@ const Home = () => {
     };
 
     const getSpending = async () => {
-        const url = "https://budget-backend-yh3v.onrender.com/api/spending/";
+        const url = "http://localhost:3003/api/spending/";
         try {
             const response = await fetch(url);
             const data = await response.json();
