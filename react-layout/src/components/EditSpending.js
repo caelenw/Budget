@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Dialog.css";
 
 const EditSpending = (props) => {
@@ -8,13 +8,24 @@ const EditSpending = (props) => {
     price: props.price,
     category: props.category,
     date: props.date,
-    prev_img: props.main_image,
+    comment: props.comment,
+  
   });
   const [result, setResult] = useState("");
 
+  useEffect(() => {
+    setInputs({
+      _id: props._id,
+      name: props.name,
+      price: props.price,
+      category: props.category,
+      date: props.date,
+      comment: props.comment,
+    });
+  }, [props]);
+
   const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -28,19 +39,19 @@ const EditSpending = (props) => {
     event.preventDefault();
     setResult("Sending....");
 
-    const formData = new FormData(event.target);
-    const response = await fetch(`http://localhost:3003/api/spending/${props._id}`, {
+    const formData = new FormData(event.target);  
+    const response = await fetch(`https://budget-backend-yh3v.onrender.com/api/spending/${props._id}`, {
       method: "PUT",
       body: formData,
     });
 
     if (response.status === 200) {
-      setResult("Transaction has been updated successfully");
+      setResult("Spending plan successfully updated.");
       event.target.reset();
-      props.updateSpending(await response.json());
-      props.closeDialog();
+      props.updateSpending(await response.json());  
+      props.closeDialog(); 
     } else {
-      setResult("Transaction could not be updated, please try again");
+      setResult("Error editing your spending plan. We're sorry.");
     }
   };
 
@@ -100,32 +111,6 @@ const EditSpending = (props) => {
                 required
               />
             </p>
-            <section className="columns">
-              <p id="img-prev-section">
-                <img
-                  id="img-prev"
-                  src={
-                    inputs.img != null
-                      ? URL.createObjectURL(inputs.img)
-                      : inputs.prev_img != null
-                      ? `http://localhost:3003/api/spending/${inputs.prev_img}`
-                      : ""
-                  }
-                  alt=""
-                />
-              </p>
-              <p id="img-upload">
-                <label htmlFor="img">Upload Image:</label>
-                <input
-                  type="file"
-                  id="img"
-                  name="img"
-                  onChange={handleImageChange}
-                  accept="image/*"
-                />
-              </p>
-            </section>
-
             <p>
               <button type="submit">Submit</button>
             </p>
@@ -136,5 +121,4 @@ const EditSpending = (props) => {
     </div>
   );
 };
-
 export default EditSpending;

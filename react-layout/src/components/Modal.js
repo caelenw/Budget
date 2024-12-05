@@ -1,44 +1,66 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { FaRegSave } from "react-icons/fa";
+import { MdOutlineCancel } from "react-icons/md";
 import '../css/Modal.css';
 
-const Modal = ({ transaction, onClose, onSave, setTransactions }) => {  
-  const [editedTransaction, setEditedTransaction] = useState(transaction);
-  const [statusMessage, setStatusMessage] = useState(''); 
+const Modal = ({ transaction, onClose, onSave }) => {
+  const [editSpending, setEditedTransaction] = useState(transaction || {});
+  const [statusMessage, setStatusMessage] = useState('');
 
-  
+  const categoryToLogo = {
+    Food: "food",
+    Health: "health",
+    Savings: "savings",
+    Rent: "rent",
+    Pets: "pets",
+    Insurance: "insurance",
+    Kids: "kids",
+    Debt: "debt",
+    Car: "car",
+    Other: "other",
+  };
+
   useEffect(() => {
-    setEditedTransaction(transaction);
-    setStatusMessage(''); 
+    setEditedTransaction(transaction || {});
+    setStatusMessage('');
   }, [transaction]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditedTransaction((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    if (name === 'Categorie') {
+      setEditedTransaction((prev) => ({
+        ...prev,
+        [name]: value,
+        logo: categoryToLogo[value] || 'default',
+      }));
+    } else {
+      setEditedTransaction((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   const handleCommentsChange = (e) => {
     const value = e.target.value.split(',').map((comment) => comment.trim());
     setEditedTransaction((prev) => ({
       ...prev,
-      Comments: value,
+      Comment: value, 
     }));
   };
 
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3003/api/spending/${editedTransaction._id}`,
-        editedTransaction
+        `https://budget-backend-yh3v.onrender.com/api/spending/${editSpending._id}`,
+        editSpending
       );
 
       if (response.status === 200) {
         setStatusMessage('Transaction updated successfully!');
-        onSave(response.data); 
-        setTimeout(onClose, 1500); 
+        onSave(response.data);
+        setTimeout(onClose, 1000);
       } else {
         setStatusMessage('Unexpected server response. Please try again.');
       }
@@ -47,7 +69,6 @@ const Modal = ({ transaction, onClose, onSave, setTransactions }) => {
       setStatusMessage('Error updating transaction. Please try again.');
     }
   };
-
   return (
     <div className="modal">
       <div className="modal-content">
@@ -55,82 +76,103 @@ const Modal = ({ transaction, onClose, onSave, setTransactions }) => {
           ×
         </span>
         <h2>Edit Transaction</h2>
-
         <label>
           Item:
           <input
             type="text"
-            name="Item"
-            value={editedTransaction.Item}
+            name="item"
+            value={editSpending.item || ''}
             onChange={handleChange}
           />
         </label>
-
         <label>
           Price:
           <input
             type="number"
             name="Price"
-            value={editedTransaction.Price}
+            value={editSpending.Price || ''}
             onChange={handleChange}
           />
         </label>
-
         <label>
           Account:
-          <input
-            type="text"
+          <select
             name="Account"
-            value={editedTransaction.Account}
+            value={editSpending.Account || 'default'}
             onChange={handleChange}
-          />
+          >
+            <option value="default" disabled>
+              Select Account
+            </option>
+            <option value="Checking">Checking</option>
+            <option value="Credit">Credit</option>
+            <option value="Savings">Savings</option>
+            <option value="Other">Other</option>
+          </select>
         </label>
-
         <label>
           Date:
           <input
             type="datetime-local"
             name="Date"
-            value={editedTransaction.Date}
+            value={editSpending.Date || ''}
             onChange={handleChange}
           />
         </label>
         <label>
           Category:
-          <input
-            type="text"
+          <select
             name="Categorie"
-            value={editedTransaction.Categorie}
+            value={editSpending.Categorie || 'default'}
             onChange={handleChange}
-          />
+          >
+            <option value="default" disabled>
+              Select Category
+            </option>
+            <option value="Food">Food</option>
+            <option value="Health">Health</option>
+            <option value="Savings">Savings</option>
+            <option value="Rent">Rent</option>
+            <option value="Pets">Pets</option>
+            <option value="Insurance">Insurance</option>
+            <option value="Kids">Kids</option>
+            <option value="Debt">Debt</option>
+            <option value="Car">Car</option>
+            <option value="Other">Other</option>
+          </select>
         </label>
         <label>
           Status:
-          <input
-            type="text"
+          <select
             name="Status"
-            value={editedTransaction.Status}
+            value={editSpending.Status || 'default'}
             onChange={handleChange}
-          />
+          >
+            <option value="default" disabled>
+              Select Status
+            </option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
         </label>
         <label>
           Comments:
           <input
             type="text"
-            name="Comments"
-            value={editedTransaction.Comments.join(', ')}
+            name="Comment"
+            value={editSpending.Comment || ''}
             onChange={handleCommentsChange}
           />
         </label>
         <div className="modal-actions">
-          <button onClick={handleSave}>Save Update</button>
-          <button onClick={onClose}>Cancel</button>
-          
+          <button id='save' onClick={handleSave}><FaRegSave />
+          </button>
+          <button id='exit' onClick={onClose}><MdOutlineCancel />
+          </button>
         </div>
         {statusMessage && (
-          <div
-            className="status-message"
-          >
+          <div className="status-message">
             {statusMessage}
           </div>
         )}
@@ -138,5 +180,4 @@ const Modal = ({ transaction, onClose, onSave, setTransactions }) => {
     </div>
   );
 };
-
 export default Modal;

@@ -17,13 +17,13 @@ const TransactionForm = () => {
 
   const [transaction, setTransaction] = useState({
     logo: "default",
-    Item: "",
+    item: "", 
     Price: "",
     Account: "default",
     Date: "",
     Categorie: "default",
     Status: "default",
-    Comments: "",
+    Comment: "", 
   });
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
@@ -35,7 +35,7 @@ const TransactionForm = () => {
       setTransaction({
         ...transaction,
         [id]: value,
-        logo: categoryToLogo[value] || "default", 
+        logo: categoryToLogo[value] || "default",
       });
     } else {
       setTransaction({
@@ -44,52 +44,47 @@ const TransactionForm = () => {
       });
     }
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!transaction.Item || !transaction.Price || !transaction.Date) {
-      setSubmissionStatus("Item, Price, and Date are required!");
-      return;
-    }
-
-    const formData = new FormData();
-    for (let key in transaction) {
-      formData.append(key, transaction[key]);
-    }
-
-    try {
-      await axios.post("http://localhost:3003/api/spending/", formData);
-      setSubmissionStatus("Transaction Was Added Successfully!");
-      setTransaction({
-        logo: "default",
-        Item: "",
-        Price: "",
-        Account: "default",
-        Date: "",
-        Categorie: "default",
-        Status: "default",
-        Comments: "",
-      });
-    } catch (error) {
-      setSubmissionStatus("Error adding the transaction.");
-    }
+  const formattedTransaction = {
+    ...transaction,
+    Comment: Array.isArray(transaction.Comment)
+      ? transaction.Comment.join(", ") 
+      : transaction.Comment,
   };
+
+  try {
+    await axios.post("https://budget-backend-yh3v.onrender.com/api/spending/", formattedTransaction);
+    setSubmissionStatus("Transaction Was Added Successfully!");
+    setTransaction({
+      logo: "default",
+      item: "",
+      Price: "",
+      Account: "default",
+      Date: "",
+      Categorie: "default",
+      Status: "default",
+      Comment: "",
+    });
+  } catch (error) {
+    console.error("Error:", error.response?.data || error.message);
+    setSubmissionStatus("Error adding the transaction.");
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} id="upload-bottom">
       <h2>Please Enter The Transaction Below:</h2>
-
       <div id="item">
-        <label htmlFor="Item">Item:</label>
+        <label htmlFor="item">Item:</label>
         <input
           type="text"
-          id="Item"
-          value={transaction.Item}
+          id="item" 
+          value={transaction.item}
           onChange={handleChange}
         />
       </div>
-
       <div id="price">
         <label htmlFor="Price">Price:</label>
         <input
@@ -99,7 +94,6 @@ const TransactionForm = () => {
           onChange={handleChange}
         />
       </div>
-
       <div id="account">
         <label htmlFor="Account">Account:</label>
         <select id="Account" value={transaction.Account} onChange={handleChange}>
@@ -112,7 +106,6 @@ const TransactionForm = () => {
           <option value="Other">Other</option>
         </select>
       </div>
-
       <div id="date">
         <label htmlFor="Date">Date:</label>
         <input
@@ -122,7 +115,6 @@ const TransactionForm = () => {
           onChange={handleChange}
         />
       </div>
-
       <div id="category">
         <label htmlFor="Categorie">Category:</label>
         <select
@@ -145,7 +137,6 @@ const TransactionForm = () => {
           <option value="Other">Other</option>
         </select>
       </div>
-
       <div id="status">
         <label htmlFor="Status">Status:</label>
         <select id="Status" value={transaction.Status} onChange={handleChange}>
@@ -157,25 +148,17 @@ const TransactionForm = () => {
           <option value="Completed">Completed</option>
         </select>
       </div>
-
       <div id="comments">
-        <label htmlFor="Comments">Comments:</label>
+        <label htmlFor="Comment">Comment:</label>
         <textarea
-          id="Comments"
-          value={transaction.Comments}
+          id="Comment" 
+          value={transaction.Comment}
           onChange={handleChange}
         />
       </div>
-
-      <div id="upload-btn">
-        <button type="submit" id="upload-button">
-          Upload Transaction
-        </button>
-      </div>
-
-      {submissionStatus && <div id="submission-status">{submissionStatus}</div>}
+      <button id="upload" type="submit">Upload </button>
+      {submissionStatus && <p id="uploads">{submissionStatus}</p>}
     </form>
   );
 };
-
 export default TransactionForm;

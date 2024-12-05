@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import '../css/Transactions.css';
 import Modal from './Modal';
-
 const TransactionTable = ({ transactions, setTransactions, onDelete }) => {
     const [selectedTransaction, setSelectedTransaction] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    console.log('Transactions:', transactions); 
+
+    
     const handleEditClick = (transaction) => {
         setSelectedTransaction(transaction);
         setIsModalOpen(true);
@@ -25,7 +27,7 @@ const TransactionTable = ({ transactions, setTransactions, onDelete }) => {
             )
         );
     };
-    
+
     return (
         <div>
             <table>
@@ -44,18 +46,19 @@ const TransactionTable = ({ transactions, setTransactions, onDelete }) => {
                 <tbody>
                     {transactions.map((transaction, index) => (
                         <tr key={index}>
-                            <td>{transaction.Item}</td>
-                            <td>{transaction.Price}</td>
-                            <td>{transaction.Account}</td>
-                            <td>{transaction.Date}</td>
-                            <td>{transaction.Categorie}</td>
-                            <td>{transaction.Status}</td>
-                            <td>{transaction.Comments.join(', ')}</td>
+                            <td>{transaction.item || 'N/A'}</td>
+                            <td>{transaction.Price || 'N/A'}</td>
+                            <td>{transaction.Account || 'N/A'}</td>
+                            <td>{transaction.Date || 'N/A'}</td>
+                            <td>{transaction.Categorie || 'N/A'}</td>
+                            <td>{transaction.Status || 'N/A'}</td>
+                            <td>{transaction.Comment || 'N/A'}</td>
+
                             <td>
-                                <button onClick={() => handleEditClick(transaction)}>
+                                <button className='modal-action' id='saves' onClick={() => handleEditClick(transaction)}>
                                     <FaEdit />
                                 </button>
-                                <button onClick={() => onDelete(transaction)}>
+                                <button id='exits' className='modal-action' onClick={() => onDelete(transaction)}>
                                     <FaTrash />
                                 </button>
                             </td>
@@ -74,5 +77,6 @@ const TransactionTable = ({ transactions, setTransactions, onDelete }) => {
         </div>
     );
 };
+
 
 export default TransactionTable;

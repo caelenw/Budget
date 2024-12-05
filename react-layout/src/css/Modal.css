@@ -34,17 +34,40 @@
 .modal-actions {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:30px;
 }
-
+button#save.model-action {
+background-color: red;
+    color:red;
+}
+button#upload {
+    background-color: green;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#uploads {
+    font-size: 20px;
+    text-align: center;
+}
+button.upload {
+    text-align: center;
+}
+button#exit {
+    background-color: red;
+}
+button#save {
+    background-color: green;
+}
+button#exit {
+    background-color: red;
+}
 button {
     padding: 10px;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
-    background-color: #007BFF;
-    color: white;
 }
 
-button:hover {
-    background-color: #0056b3;
-}

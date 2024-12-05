@@ -6,7 +6,7 @@ const Transaction = () => {
     const [transactions, setTransactions] = useState([]);
 
     const fetchTransactions = async () => {
-        const url = "http://localhost:3003/api/spending/";
+        const url = "https://budget-backend-yh3v.onrender.com/api/spending/";
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -19,7 +19,7 @@ const Transaction = () => {
     const [successMessage, setSuccessMessage] = useState('');
 
     const onDelete = async (transaction) => {
-        const url = `http://localhost:3003/api/spending/${transaction._id}`;
+        const url = `https://budget-backend-yh3v.onrender.com/api/spending/${transaction._id}`;
         try {
             const response = await fetch(url, { method: 'DELETE' });
             if (response.status === 200) {
